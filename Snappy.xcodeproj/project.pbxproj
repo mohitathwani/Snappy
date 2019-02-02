@@ -13,6 +13,7 @@
 		064DADD22206557C00A7D383 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 064DADD12206557C00A7D383 /* Assets.xcassets */; };
 		064DADD52206557C00A7D383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064DADD32206557C00A7D383 /* LaunchScreen.storyboard */; };
 		064DADE02206557C00A7D383 /* SnappyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DADDF2206557C00A7D383 /* SnappyTests.swift */; };
+		064DADEC220656D400A7D383 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DADEB220656D400A7D383 /* CameraManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		064DADDB2206557C00A7D383 /* SnappyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnappyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		064DADDF2206557C00A7D383 /* SnappyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappyTests.swift; sourceTree = "<group>"; };
 		064DADE12206557C00A7D383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		064DADEB220656D400A7D383 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		064DADC92206557B00A7D383 /* Snappy */ = {
 			isa = PBXGroup;
 			children = (
+				064DADEA220656BD00A7D383 /* CameraManager */,
 				064DADCA2206557B00A7D383 /* AppDelegate.swift */,
 				064DADCC2206557B00A7D383 /* ViewController.swift */,
 				064DADCE2206557B00A7D383 /* Main.storyboard */,
@@ -94,6 +97,14 @@
 				064DADE12206557C00A7D383 /* Info.plist */,
 			);
 			path = SnappyTests;
+			sourceTree = "<group>";
+		};
+		064DADEA220656BD00A7D383 /* CameraManager */ = {
+			isa = PBXGroup;
+			children = (
+				064DADEB220656D400A7D383 /* CameraManager.swift */,
+			);
+			path = CameraManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				064DADCD2206557B00A7D383 /* ViewController.swift in Sources */,
+				064DADEC220656D400A7D383 /* CameraManager.swift in Sources */,
 				064DADCB2206557B00A7D383 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
