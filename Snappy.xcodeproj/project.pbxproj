@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06197B21220F859B0024C188 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06197B20220F859B0024C188 /* PreviewView.swift */; };
 		064DADCB2206557B00A7D383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DADCA2206557B00A7D383 /* AppDelegate.swift */; };
 		064DADCD2206557B00A7D383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DADCC2206557B00A7D383 /* ViewController.swift */; };
 		064DADD02206557B00A7D383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064DADCE2206557B00A7D383 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06197B20220F859B0024C188 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		064DADC72206557B00A7D383 /* Snappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		064DADCA2206557B00A7D383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		064DADCC2206557B00A7D383 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		06197B1F220F855F0024C188 /* PreviewView */ = {
 			isa = PBXGroup;
 			children = (
+				06197B20220F859B0024C188 /* PreviewView.swift */,
 			);
 			path = PreviewView;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				064DADCD2206557B00A7D383 /* ViewController.swift in Sources */,
+				06197B21220F859B0024C188 /* PreviewView.swift in Sources */,
 				064DADEC220656D400A7D383 /* CameraManager.swift in Sources */,
 				064DADCB2206557B00A7D383 /* AppDelegate.swift in Sources */,
 			);

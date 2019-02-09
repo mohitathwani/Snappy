@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     }
   }
   
+  @IBOutlet weak var previewView: PreviewView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     verifyPermission()
@@ -44,10 +46,19 @@ class ViewController: UIViewController {
     switch sessionConfigured {
     case .success:
       print("Session Configured")
+      setupPreviewView()
       
     case .error(let errorString):
       print(errorString)
     }
+  }
+  
+  func setupPreviewView () {
+    previewView.videoPreviewLayer.session = cameraManager.captureSession
+//    previewView.frame = view.frame
+//    view.addSubview(previewView)
+    
+    cameraManager.captureSession.startRunning()
   }
 
 }
