@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  var cameraManager: ICameraManager?
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    CameraManager.verifyPermission { (permission) in
+    cameraManager = CameraManager()
+    guard let cameraManager = cameraManager else {
+      fatalError("cameraManager is nil.")
+    }
+    
+    type(of: cameraManager).verifyPermission { (permission) in
       switch permission {
       case .success:
         print("Success")
@@ -20,7 +27,6 @@ class ViewController: UIViewController {
       case .error(let errorString):
         print(errorString)
       }
-      
     }
   }
 

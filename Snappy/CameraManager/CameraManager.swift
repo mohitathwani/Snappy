@@ -8,12 +8,16 @@
 
 import AVFoundation
 
+protocol ICameraManager {
+  static func verifyPermission(handler: @escaping (PermissionStatus) -> Void)
+}
+
 enum PermissionStatus {
   case success
   case error(errorString: String)
 }
 
-struct CameraManager {
+struct CameraManager: ICameraManager {
   static func verifyPermission(handler: @escaping (PermissionStatus) -> Void) {
     switch AVCaptureDevice.authorizationStatus(for: .video) {
     case .authorized:
