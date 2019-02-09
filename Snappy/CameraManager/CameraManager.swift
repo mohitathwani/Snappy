@@ -17,6 +17,8 @@ struct CameraManager {
   let captureSession = AVCaptureSession()
   var videoDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInDualCamera, for: AVMediaType.video, position: AVCaptureDevice.Position.back)
   
+  let photoOutput = AVCapturePhotoOutput()
+  
   static func verifyPermission(handler: @escaping (CameraManagerStatus) -> Void) {
     switch AVCaptureDevice.authorizationStatus(for: .video) {
     case .authorized:
@@ -41,10 +43,17 @@ struct CameraManager {
     captureSession.beginConfiguration()
     guard let videoDevice = videoDevice,
           let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice),
-      captureSession.canAddInput(videoDeviceInput) else {
+          captureSession.canAddInput(videoDeviceInput),
+          captureSession.canAddOutput(photoOutput)
+    else {
         return .error(errorString: "Error in connecting to the camera.")
     }
-    captureSession.canAddInput(videoDeviceInput)
+    
+    
+    captureSession.addInput(videoDeviceInput)
+    captureSession.sessionPreset = .photo
+    captureSession.addOutput(photoOutput)
+    captureSession.commitConfiguration()
     return .success
   }
 }
