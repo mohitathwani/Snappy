@@ -9,13 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController {
+  
+  let cameraManager = CameraManager()
+  var permissionGranted = false {
+    willSet {
+      if newValue == true {
+        configureSession()
+      }
+    }
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-    CameraManager.verifyPermission { (permission) in
+    verifyPermission()
+  }
+
+  func verifyPermission() {
+    CameraManager.verifyPermission {[unowned self] (permission) in
       switch permission {
       case .success:
         print("Success")
+        self.permissionGranted = true
         
       case .error(let errorString):
         print(errorString)
@@ -23,7 +37,18 @@ class ViewController: UIViewController {
       
     }
   }
-
+  
+  func configureSession() {
+    let sessionConfigured = cameraManager.configureCaptureSession()
+    
+    switch sessionConfigured {
+    case .success:
+      print("Session Configured")
+      
+    case .error(let errorString):
+      print(errorString)
+    }
+  }
 
 }
 

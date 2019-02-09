@@ -8,13 +8,16 @@
 
 import AVFoundation
 
-enum PermissionStatus {
+enum CameraManagerStatus {
   case success
   case error(errorString: String)
 }
 
 struct CameraManager {
-  static func verifyPermission(handler: @escaping (PermissionStatus) -> Void) {
+  let captureSession = AVCaptureSession()
+  var videoDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInDualCamera, for: AVMediaType.video, position: AVCaptureDevice.Position.back)
+  
+  static func verifyPermission(handler: @escaping (CameraManagerStatus) -> Void) {
     switch AVCaptureDevice.authorizationStatus(for: .video) {
     case .authorized:
       handler(.success)
@@ -32,5 +35,16 @@ struct CameraManager {
         }
       }
     }
+  }
+  
+  func configureCaptureSession() -> CameraManagerStatus {
+    captureSession.beginConfiguration()
+    guard let videoDevice = videoDevice,
+          let videoDeviceInput = try? AVCaptureDeviceInput(device: videoDevice),
+      captureSession.canAddInput(videoDeviceInput) else {
+        return .error(errorString: "Error in connecting to the camera.")
+    }
+    captureSession.canAddInput(videoDeviceInput)
+    return .success
   }
 }
