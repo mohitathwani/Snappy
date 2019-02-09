@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
   
@@ -55,8 +56,7 @@ class ViewController: UIViewController {
   
   func setupPreviewView () {
     previewView.videoPreviewLayer.session = cameraManager.captureSession
-//    previewView.frame = view.frame
-//    view.addSubview(previewView)
+    previewView.videoPreviewLayer.videoGravity = .resizeAspectFill
     
     cameraManager.captureSession.startRunning()
   }
