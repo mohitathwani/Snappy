@@ -22,9 +22,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VlC-23-PPj">
+                                <rect key="frame" x="170" y="617" width="35" height="30"/>
+                                <state key="normal" title="Snap"/>
+                                <connections>
+                                    <action selector="snap:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fb2-TI-1Uw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="VlC-23-PPj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="66F-if-yXb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VlC-23-PPj" secondAttribute="bottom" constant="20" id="UTd-fo-7iK"/>
                             <constraint firstItem="gkC-TJ-a44" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bu2-wi-5ed"/>
                             <constraint firstItem="gkC-TJ-a44" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="khT-5w-fMN"/>
                             <constraint firstItem="gkC-TJ-a44" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="m1b-aC-9Xz"/>
