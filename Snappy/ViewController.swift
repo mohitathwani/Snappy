@@ -61,5 +61,16 @@ class ViewController: UIViewController {
     cameraManager.captureSession.startRunning()
   }
 
+  @IBAction func snap(_ sender: UIButton) {
+    cameraManager.capturePhoto { (data, status) in
+      switch status {
+      case .success:
+        print(data)
+        
+      case .error(let errorString):
+        print(errorString)
+      }
+    }
+  }
 }
 

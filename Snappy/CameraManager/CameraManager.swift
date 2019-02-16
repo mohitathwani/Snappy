@@ -13,11 +13,15 @@ enum CameraManagerStatus {
   case error(errorString: String)
 }
 
-struct CameraManager {
+typealias PhotoCaptureCallback = (Data?, CameraManagerStatus) -> Void
+
+class CameraManager: NSObject, AVCapturePhotoCaptureDelegate {
+  
   let captureSession = AVCaptureSession()
   var videoDevice = AVCaptureDevice.default(AVCaptureDevice.DeviceType.builtInDualCamera, for: AVMediaType.video, position: AVCaptureDevice.Position.back)
   
   let photoOutput = AVCapturePhotoOutput()
+  var photoCaptureCallback: PhotoCaptureCallback?
   
   static func verifyPermission(handler: @escaping (CameraManagerStatus) -> Void) {
     switch AVCaptureDevice.authorizationStatus(for: .video) {
@@ -55,5 +59,30 @@ struct CameraManager {
     captureSession.addOutput(photoOutput)
     captureSession.commitConfiguration()
     return .success
+  }
+  
+  func capturePhoto(_ completion: @escaping PhotoCaptureCallback) {
+    guard captureSession.isRunning else {
+      completion(nil, .error(errorString: "Session is not running"))
+      return
+    }
+    
+    photoCaptureCallback = completion
+    
+    let photoSettings = AVCapturePhotoSettings()
+    photoOutput.capturePhoto(with: photoSettings, delegate: self)
+  }
+}
+
+//Delegate Call Backs
+extension CameraManager {
+  func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
+    
+    guard let callback = photoCaptureCallback,
+          let data = photo.fileDataRepresentation() else {
+      fatalError("This should never have happened")
+    }
+    
+    callback(data, .success)
   }
 }
