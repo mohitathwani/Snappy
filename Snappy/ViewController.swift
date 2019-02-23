@@ -62,10 +62,14 @@ class ViewController: UIViewController {
   }
 
   @IBAction func snap(_ sender: UIButton) {
-    cameraManager.capturePhoto { (data, status) in
+    cameraManager.capturePhoto { [unowned self] (data, status) in
       switch status {
       case .success:
-        print(data)
+        if let imageDisplayVC = self.storyboard?.instantiateViewController(withIdentifier: "imageDisplayVC") as? ImageDisplayVCViewController,
+          let data = data {
+          imageDisplayVC.image = UIImage(data: data)
+          self.present(imageDisplayVC, animated: false, completion: nil)
+        }
         
       case .error(let errorString):
         print(errorString)

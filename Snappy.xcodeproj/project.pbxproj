@@ -15,6 +15,7 @@
 		064DADD52206557C00A7D383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064DADD32206557C00A7D383 /* LaunchScreen.storyboard */; };
 		064DADE02206557C00A7D383 /* SnappyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DADDF2206557C00A7D383 /* SnappyTests.swift */; };
 		064DADEC220656D400A7D383 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DADEB220656D400A7D383 /* CameraManager.swift */; };
+		06F03C112221EC14007C6103 /* ImageDisplayVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F03C102221EC14007C6103 /* ImageDisplayVCViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		064DADDF2206557C00A7D383 /* SnappyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnappyTests.swift; sourceTree = "<group>"; };
 		064DADE12206557C00A7D383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		064DADEB220656D400A7D383 /* CameraManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
+		06F03C102221EC14007C6103 /* ImageDisplayVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDisplayVCViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		064DADC92206557B00A7D383 /* Snappy */ = {
 			isa = PBXGroup;
 			children = (
+				06F03C0F2221EBF5007C6103 /* ImageDisplayVC */,
 				06197B1F220F855F0024C188 /* PreviewView */,
 				064DADEA220656BD00A7D383 /* CameraManager */,
 				064DADCA2206557B00A7D383 /* AppDelegate.swift */,
@@ -116,6 +119,14 @@
 				064DADEB220656D400A7D383 /* CameraManager.swift */,
 			);
 			path = CameraManager;
+			sourceTree = "<group>";
+		};
+		06F03C0F2221EBF5007C6103 /* ImageDisplayVC */ = {
+			isa = PBXGroup;
+			children = (
+				06F03C102221EC14007C6103 /* ImageDisplayVCViewController.swift */,
+			);
+			path = ImageDisplayVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				064DADCD2206557B00A7D383 /* ViewController.swift in Sources */,
+				06F03C112221EC14007C6103 /* ImageDisplayVCViewController.swift in Sources */,
 				06197B21220F859B0024C188 /* PreviewView.swift in Sources */,
 				064DADEC220656D400A7D383 /* CameraManager.swift in Sources */,
 				064DADCB2206557B00A7D383 /* AppDelegate.swift in Sources */,

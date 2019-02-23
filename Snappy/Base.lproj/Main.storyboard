@@ -33,11 +33,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="VlC-23-PPj" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="66F-if-yXb"/>
+                            <constraint firstItem="gkC-TJ-a44" firstAttribute="centerX" secondItem="VlC-23-PPj" secondAttribute="centerX" id="N2L-0o-9SE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VlC-23-PPj" secondAttribute="bottom" constant="20" id="UTd-fo-7iK"/>
-                            <constraint firstItem="gkC-TJ-a44" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="bu2-wi-5ed"/>
-                            <constraint firstItem="gkC-TJ-a44" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="khT-5w-fMN"/>
-                            <constraint firstItem="gkC-TJ-a44" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="m1b-aC-9Xz"/>
+                            <constraint firstItem="gkC-TJ-a44" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dwk-Tu-RGE"/>
                             <constraint firstItem="gkC-TJ-a44" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="mgd-nq-Ts8"/>
+                            <constraint firstItem="gkC-TJ-a44" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="zOY-a1-lp7"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -48,6 +48,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-71.200000000000003" y="125.4872563718141"/>
+        </scene>
+        <!--Image DisplayVC View Controller-->
+        <scene sceneID="VSZ-HE-opO">
+            <objects>
+                <viewController storyboardIdentifier="imageDisplayVC" id="tRk-kg-J7s" customClass="ImageDisplayVCViewController" customModule="Snappy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W50-Bc-P2t">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TsW-to-weZ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="np6-bM-Lx6">
+                                <rect key="frame" x="20" y="617" width="47" height="30"/>
+                                <state key="normal" title="Retake"/>
+                                <connections>
+                                    <action selector="retake:" destination="tRk-kg-J7s" eventType="touchUpInside" id="hUO-0e-ynI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMU-wp-ZzS">
+                                <rect key="frame" x="321" y="617" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="tRk-kg-J7s" eventType="touchUpInside" id="ibR-mf-lva"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TsW-to-weZ" firstAttribute="top" secondItem="W50-Bc-P2t" secondAttribute="top" id="CjA-tS-UPX"/>
+                            <constraint firstItem="np6-bM-Lx6" firstAttribute="leading" secondItem="5uu-N8-SWp" secondAttribute="leading" constant="20" id="K6I-vN-FET"/>
+                            <constraint firstItem="TsW-to-weZ" firstAttribute="width" secondItem="W50-Bc-P2t" secondAttribute="width" id="bUL-7f-Qu3"/>
+                            <constraint firstItem="TsW-to-weZ" firstAttribute="leading" secondItem="W50-Bc-P2t" secondAttribute="leading" id="eZQ-Hk-Phh"/>
+                            <constraint firstItem="5uu-N8-SWp" firstAttribute="bottom" secondItem="hMU-wp-ZzS" secondAttribute="bottom" constant="20" id="m2R-WB-H10"/>
+                            <constraint firstItem="5uu-N8-SWp" firstAttribute="bottom" secondItem="np6-bM-Lx6" secondAttribute="bottom" constant="20" id="n68-VB-8fQ"/>
+                            <constraint firstItem="5uu-N8-SWp" firstAttribute="trailing" secondItem="hMU-wp-ZzS" secondAttribute="trailing" constant="20" id="uAr-sU-SKa"/>
+                            <constraint firstItem="TsW-to-weZ" firstAttribute="height" secondItem="W50-Bc-P2t" secondAttribute="height" id="y5s-PF-Nm5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5uu-N8-SWp"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="TsW-to-weZ" id="M31-Dk-Nl3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dee-o8-7cb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="684" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>
