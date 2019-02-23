@@ -87,5 +87,16 @@ class ViewController: UIViewController {
       self.previewView.videoPreviewLayer.opacity = 1
     }
   }
+  
+  @IBAction func toggleCamera(_ sender: UITapGestureRecognizer) {
+    let cameraToggled = cameraManager.toggleCamera()
+    switch cameraToggled {
+    case .success:
+      print("You might have to make some UI changes here.")
+      
+    case .error(let errorString):
+      print(errorString)
+    }
+  }
 }
 
