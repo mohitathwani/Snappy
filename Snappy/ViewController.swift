@@ -62,9 +62,13 @@ class ViewController: UIViewController {
   }
 
   @IBAction func snap(_ sender: UIButton) {
+    
     cameraManager.capturePhoto { [unowned self] (data, status) in
       switch status {
       case .success:
+        if data == nil {
+          self.flashScreen()
+        }
         if let imageDisplayVC = self.storyboard?.instantiateViewController(withIdentifier: "imageDisplayVC") as? ImageDisplayVCViewController,
           let data = data {
           imageDisplayVC.image = UIImage(data: data)
@@ -74,6 +78,13 @@ class ViewController: UIViewController {
       case .error(let errorString):
         print(errorString)
       }
+    }
+  }
+  
+  func flashScreen() {
+    previewView.videoPreviewLayer.opacity = 0
+    UIView.animate(withDuration: 0.25) {
+      self.previewView.videoPreviewLayer.opacity = 1
     }
   }
 }

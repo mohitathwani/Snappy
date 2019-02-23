@@ -85,4 +85,12 @@ extension CameraManager {
     
     callback(data, .success)
   }
+  
+  func photoOutput(_ output: AVCapturePhotoOutput, willCapturePhotoFor resolvedSettings: AVCaptureResolvedPhotoSettings) {
+    guard let callback = photoCaptureCallback else {
+      fatalError("This should never have happened")
+    }
+    
+    callback(nil, .success)
+  }
 }
