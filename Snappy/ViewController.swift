@@ -98,5 +98,9 @@ class ViewController: UIViewController {
       print(errorString)
     }
   }
+  @IBAction func focus(_ sender: UITapGestureRecognizer) {
+    let focusPoint = previewView.videoPreviewLayer.captureDevicePointConverted(fromLayerPoint: sender.location(in: sender.view))
+    cameraManager.focusCamera(with: .autoFocus, exposureMode: .autoExpose, at: focusPoint, monitorSubjectAreaChanged: true)
+  }
 }
 

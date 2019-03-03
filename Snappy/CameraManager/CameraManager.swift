@@ -122,6 +122,34 @@ class CameraManager: NSObject, AVCapturePhotoCaptureDelegate {
     captureSession.removeOutput(photoOutput)
     captureSession.commitConfiguration()
   }
+  
+  func focusCamera(with focusMode: AVCaptureDevice.FocusMode,
+                   exposureMode: AVCaptureDevice.ExposureMode,
+                   at focusPoint: CGPoint,
+                   monitorSubjectAreaChanged: Bool) {
+    
+    if let currentDevice = currentVideoDeviceInput?.device {
+      do {
+        try currentDevice.lockForConfiguration()
+        if currentDevice.isFocusPointOfInterestSupported && currentDevice.isFocusModeSupported(focusMode) {
+          currentDevice.focusPointOfInterest = focusPoint
+          currentDevice.focusMode = focusMode
+        }
+        
+        if currentDevice.isExposurePointOfInterestSupported && currentDevice.isExposureModeSupported(exposureMode) {
+          currentDevice.exposurePointOfInterest = focusPoint
+          currentDevice.exposureMode = exposureMode
+        }
+        
+        currentDevice.isSubjectAreaChangeMonitoringEnabled = monitorSubjectAreaChanged //Leave this for crowd to implement
+        
+        currentDevice.unlockForConfiguration()
+      }
+      catch {
+        print("Unable to lock configuration")
+      }
+    }
+  }
 }
 
 //Delegate Call Backs

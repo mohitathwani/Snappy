@@ -24,6 +24,7 @@
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Pl3-1g-501" appends="YES" id="PlQ-mv-g2w"/>
+                                    <outletCollection property="gestureRecognizers" destination="0Kf-Iz-dBT" appends="YES" id="tAD-b9-6lJ"/>
                                 </connections>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VlC-23-PPj">
@@ -53,6 +54,11 @@
                 <tapGestureRecognizer numberOfTapsRequired="2" id="Pl3-1g-501">
                     <connections>
                         <action selector="toggleCamera:" destination="BYZ-38-t0r" id="Nc8-8V-Vxr"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="0Kf-Iz-dBT">
+                    <connections>
+                        <action selector="focus:" destination="BYZ-38-t0r" id="XrG-g4-BrJ"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
