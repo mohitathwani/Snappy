@@ -95,6 +95,9 @@ class CameraManager: NSObject, AVCapturePhotoCaptureDelegate {
     photoCaptureCallback = completion
     
     let photoSettings = AVCapturePhotoSettings()
+    if let _ = currentVideoDeviceInput?.device.isFlashAvailable {
+      photoSettings.flashMode = .auto
+    }
     photoOutput.capturePhoto(with: photoSettings, delegate: self)
   }
   
