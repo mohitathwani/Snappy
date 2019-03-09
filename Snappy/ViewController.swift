@@ -71,7 +71,7 @@ class ViewController: UIViewController {
         }
         if let imageDisplayVC = self.storyboard?.instantiateViewController(withIdentifier: "imageDisplayVC") as? ImageDisplayVCViewController,
           let data = data {
-          imageDisplayVC.image = UIImage(data: data)
+          imageDisplayVC.imageData = data
           self.present(imageDisplayVC, animated: false, completion: nil)
         }
         

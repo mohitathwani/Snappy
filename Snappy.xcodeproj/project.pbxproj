@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		06197B21220F859B0024C188 /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06197B20220F859B0024C188 /* PreviewView.swift */; };
+		0643801C22345EBB002F1E22 /* MediaManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0643801B22345EBB002F1E22 /* MediaManager.swift */; };
 		064DADCB2206557B00A7D383 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DADCA2206557B00A7D383 /* AppDelegate.swift */; };
 		064DADCD2206557B00A7D383 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064DADCC2206557B00A7D383 /* ViewController.swift */; };
 		064DADD02206557B00A7D383 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 064DADCE2206557B00A7D383 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		06197B20220F859B0024C188 /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		0643801B22345EBB002F1E22 /* MediaManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaManager.swift; sourceTree = "<group>"; };
 		064DADC72206557B00A7D383 /* Snappy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snappy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		064DADCA2206557B00A7D383 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		064DADCC2206557B00A7D383 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 			path = PreviewView;
 			sourceTree = "<group>";
 		};
+		0643801A22345E8C002F1E22 /* MediaManager */ = {
+			isa = PBXGroup;
+			children = (
+				0643801B22345EBB002F1E22 /* MediaManager.swift */,
+			);
+			path = MediaManager;
+			sourceTree = "<group>";
+		};
 		064DADBE2206557B00A7D383 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		064DADC92206557B00A7D383 /* Snappy */ = {
 			isa = PBXGroup;
 			children = (
+				0643801A22345E8C002F1E22 /* MediaManager */,
 				06F03C0F2221EBF5007C6103 /* ImageDisplayVC */,
 				06197B1F220F855F0024C188 /* PreviewView */,
 				064DADEA220656BD00A7D383 /* CameraManager */,
@@ -234,6 +245,7 @@
 				06F03C112221EC14007C6103 /* ImageDisplayVCViewController.swift in Sources */,
 				06197B21220F859B0024C188 /* PreviewView.swift in Sources */,
 				064DADEC220656D400A7D383 /* CameraManager.swift in Sources */,
+				0643801C22345EBB002F1E22 /* MediaManager.swift in Sources */,
 				064DADCB2206557B00A7D383 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

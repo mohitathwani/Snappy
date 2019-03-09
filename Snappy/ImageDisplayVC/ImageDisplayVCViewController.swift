@@ -9,20 +9,40 @@
 import UIKit
 
 class ImageDisplayVCViewController: UIViewController {
-  var image: UIImage?
+  var imageData: Data?
   @IBOutlet weak var imageView: UIImageView!
   
   override func viewDidLoad() {
-        super.viewDidLoad()
-        imageView.image = image
+    super.viewDidLoad()
+    
+    if let data = imageData {
+      imageView.image = UIImage(data: data)
     }
+  }
   
   @IBAction func retake(_ sender: UIButton) {
     dismiss(animated: false, completion: nil)
   }
   
   @IBAction func save(_ sender: UIButton) {
-    //TODO: Save and then dismiss
-    dismiss(animated: false, completion: nil)
+    MediaManager.verifyPermission {[unowned self] (status)  in
+      switch status {
+      case .success :
+        if let data = self.imageData {
+          MediaManager.savePhoto(data: data, completion: {[unowned self] (status) in
+            switch status {
+            case .success:
+              self.dismiss(animated: false, completion: nil)
+              
+            case .error(let errorString):
+              print(errorString)
+            }
+          })
+        }
+        
+      case .error(let errorString):
+        print(errorString)
+      }
+    }
   }
 }
