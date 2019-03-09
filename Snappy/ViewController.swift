@@ -58,7 +58,7 @@ class ViewController: UIViewController {
     previewView.videoPreviewLayer.session = cameraManager.captureSession
     previewView.videoPreviewLayer.videoGravity = .resizeAspectFill
     
-    cameraManager.captureSession.startRunning()
+    cameraManager.startCaptureSession()
   }
 
   @IBAction func snap(_ sender: UIButton) {
@@ -89,13 +89,14 @@ class ViewController: UIViewController {
   }
   
   @IBAction func toggleCamera(_ sender: UITapGestureRecognizer) {
-    let cameraToggled = cameraManager.toggleCamera()
-    switch cameraToggled {
-    case .success:
-      print("You might have to make some UI changes here.")
-      
-    case .error(let errorString):
-      print(errorString)
+    cameraManager.toggleCamera { (cameraToggled) in
+      switch cameraToggled {
+      case .success:
+        print("You might have to make some UI changes here.")
+        
+      case .error(let errorString):
+        print(errorString)
+      }
     }
   }
   @IBAction func focus(_ sender: UITapGestureRecognizer) {
